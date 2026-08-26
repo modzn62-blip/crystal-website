@@ -1,0 +1,27 @@
+const express = require("express");
+const path = require("path");
+const app = express();
+const PORT = process.env.PORT || 10000;
+
+app.use(express.json());
+app.use(express.static(path.join(__dirname, "public")));
+
+app.get("/api/health", (req, res) => {
+  res.json({ ok: true, service: "Crystal Dashboard" });
+});
+
+app.get("/api/config", (req, res) => {
+  res.json({
+    name: "Crystal",
+    website: "https://crystal.com/",
+    status: "online"
+  });
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
+app.listen(PORT, () => {
+  console.log(`Crystal Dashboard running on port ${PORT}`);
+});
