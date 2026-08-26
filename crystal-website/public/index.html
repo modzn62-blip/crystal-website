@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crystal — Dashboard</title>
+  <meta name="description" content="Dashboard oficial da Crystal.">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="orb orb-a"></div><div class="orb orb-b"></div>
+  <header class="topbar">
+    <div class="brand"><div class="crystal">◆</div><span>Crystal</span></div>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#comandos">Comandos</a>
+      <a href="#dashboard">Dashboard</a>
+    </nav>
+    <button class="login" onclick="login()">Entrar com Discord</button>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div>
+        <span class="badge">💎 Crystal Dashboard</span>
+        <h1>Controle sua comunidade com a <span>Crystal.</span></h1>
+        <p>Configure economia, Daily, sorteios, AutoRole, tickets, moderação e muito mais em um só lugar.</p>
+        <div class="actions">
+          <button class="primary" onclick="login()">Entrar com Discord</button>
+          <a class="secondary" href="#dashboard">Abrir Dashboard</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="mascot">💎</div>
+        <h3>Crystal</h3>
+        <p>Seu bot de comunidade</p>
+        <div class="online"><i></i> Online</div>
+      </div>
+    </section>
+
+    <section id="dashboard" class="section">
+      <div class="section-title"><span class="badge">⚙️ Painel</span><h2>Dashboard completo</h2></div>
+      <div class="server-bar">
+        <div><strong>Servidor selecionado</strong><small>Escolha um servidor para configurar</small></div>
+        <select id="server">
+          <option>Meu servidor Discord</option>
+          <option>Outro servidor</option>
+        </select>
+      </div>
+
+      <div class="grid">
+        <button class="module" onclick="openModule('config-bot')"><b>🤖</b><strong>Configuração do Bot</strong><small>Nome, bio, status, imagem e banner</small></button>
+        <button class="module" onclick="openModule('economia')"><b>💎</b><strong>Economia</strong><small>Crystais, Daily, apostas e jogos</small></button>
+        <button class="module" onclick="openModule('sorteios')"><b>🎁</b><strong>Sorteios</strong><small>Crie e gerencie sorteios</small></button>
+        <button class="module" onclick="openModule('autorole')"><b>🎭</b><strong>AutoRole</strong><small>Painéis e cargos por clique</small></button>
+        <button class="module" onclick="openModule('staff')"><b>🛡️</b><strong>Staff & Permissões</strong><small>Staff, moderadores e administradores</small></button>
+        <button class="module" onclick="openModule('tickets')"><b>🎫</b><strong>Tickets</strong><small>Configure seus painéis de suporte</small></button>
+        <button class="module" onclick="openModule('entradas')"><b>🚪</b><strong>Entrada e Saída</strong><small>Personalize boas-vindas e despedidas</small></button>
+        <button class="module" onclick="openModule('parcerias')"><b>🤝</b><strong>Parcerias</strong><small>Texto e painel de parceria</small></button>
+        <button class="module" onclick="openModule('streaming')"><b>📺</b><strong>Streaming</strong><small>Notificações de lives</small></button>
+        <button class="module" onclick="openModule('moderacao')"><b>🔨</b><strong>Moderação</strong><small>Warn, timeout, ban, kick e clear</small></button>
+        <button class="module" onclick="openModule('instagram')"><b>📸</b><strong>Instagram</strong><small>Configuração de notificações</small></button>
+        <button class="module" onclick="openModule('estatisticas')"><b>📊</b><strong>Estatísticas</strong><small>Visão geral do servidor</small></button>
+      </div>
+    </section>
+
+    <section id="comandos" class="section">
+      <div class="section-title"><span class="badge">📜 Comandos</span><h2>Comandos da Crystal</h2></div>
+      <div class="command-list">
+        <div><code>c!help</code><span>Mostra todos os comandos públicos.</span></div>
+        <div><code>c!texto</code><span>Mostra o texto de parceria do servidor.</span></div>
+        <div><code>c!atm</code><span>Consulta seus crystais.</span></div>
+        <div><code>/config-bot</code><span>Dashboard de personalização do bot.</span></div>
+        <div><code>/config-autorole</code><span>Configura painéis de AutoRole.</span></div>
+        <div><code>/config-staff</code><span>Define Staff, Moderadores e Administradores.</span></div>
+        <div><code>/sorteio-premio</code><span>Dashboard de sorteios personalizados.</span></div>
+        <div><code>/painel-entradas</code><span>Dashboard de entrada.</span></div>
+        <div><code>/painel-saida</code><span>Dashboard de saída.</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>💎 Crystal · <span>https://crystal.com/</span></footer>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <button class="close" onclick="closeModule()">×</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+<script src="/app.js"></script>
+</body>
+</html>
